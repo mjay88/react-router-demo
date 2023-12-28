@@ -1,21 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "./styles.css";
 
 export default function Navbar() {
 	return (
 		<nav>
 			<ul>
 				<li>
-					<Link to="/">Home</Link>
+					{/**NavLink changes how you can set the className properties because now you can pass a function which takes in different props, isActive and is pending, which allows you to determine if this is the active link */}
+					<NavLink to="/" end>
+						Home
+					</NavLink>
 				</li>
 				<li>
-					<Link to="/about">About</Link>
+					<NavLink to="/about">About</NavLink>
 				</li>
 				<li>
-					<Link to="/store">Store</Link>
+					<NavLink to="/store">Store</NavLink>
 				</li>
 				<li>
-					<Link to="/team">Team</Link>
+					<NavLink to="/team" end>
+						Team
+					</NavLink>
 				</li>
 			</ul>
 		</nav>
